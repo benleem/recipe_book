@@ -1,25 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jamstack Explorers - Up and Running with Serverless Functions</title>
-  </head>
-  <body>
-    <h1>Up and Running with Serverless Functions</h1>
-    <button id="fetch-btn">Fetch</button>
-    <p id="response-output">Response Placeholder</p>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const fetchBtn = document.getElementById('fetch-btn')
-        const responseText = document.getElementById('response-output')
-
-        fetchBtn.addEventListener('click', () => {
-          responseText.innerText = 'Static Text Replacement'
-        })
-      })
-    </script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css">
+        <title>RecipeBook</title>
+    </head>
+    <body>
+        <form action="" class="form_container">
+            <input type="text" placeholder="Title" class="input_header" style="width: 400px; max-width: 100%; height: 40px; padding-left: 10px;">
+            <input type="text" placeholder="What's cookin?" class="input_content" style="width: 400px; max-width: 100%; height: 40px; padding-left: 10px;">
+            <button type="submit" id="add-btn">Add post test</button>
+        </form>
+        <div class="post_container"></div>
+        <script src="main.js"></script>
+    </body>
 </html>
