@@ -5,7 +5,36 @@
     border-spacing: 0;   
 }
 
+#wrapper{
+    width: 1200px;
+    max-width: 100%;
+    margin: auto;
+}
+
+.form-container{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;        
+    justify-content: center;
+    align-items: center;
+}
+
 .post-container{
     display:flex;
     flex-direction:column;
+}
+
+.post-wrapper{
+    margin: auto;
+    width: 400px;
+    max-width: 100%;
+    background-color: blueviolet;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 400px){
+    #wrapper{
+        padding: 0 3% 0 3%;
+    }
 }
