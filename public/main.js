@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     fetchData();
+    addPost();
 })
 
 const fetchData = async () => {
@@ -30,10 +31,6 @@ const loader = async (postData) => {
         </div>`);
     }
     document.querySelector('.post-container').innerHTML = posts.join('');
-    console.log(post[0].data.postInfo.ingredients);
-    // for (let i = 0; i < array.length; i++) {
-        
-    // }
     deletePost();
 };
 
@@ -80,8 +77,6 @@ const deletePost = () =>{
         });
     }
 }
-
-addPost();
 
 const showForm = () =>{
     const showBtn = document.querySelector('.show-btn');

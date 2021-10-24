@@ -1,3 +1,5 @@
+/* Hex Codes: #854d27, #dd7230, #f4c95d, #e7e393, #04030f */
+
 *{
     padding: 0;
     margin: 0;
@@ -14,7 +16,7 @@
 /* Header */
 
 header{
-    background-color: cadetblue;
+    background-color: #dd7230;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -30,11 +32,6 @@ header #wrapper{
 
 header a{
     text-decoration: none;
-    color: black;
-}
-
-.navbar{
-    padding: 0 20px;
 }
 
 .pages li{
@@ -42,6 +39,10 @@ header a{
 }
 
 /* Post submit form */
+.form-wrapper{
+    background-color: #dd7230;
+    
+}
 
 .form-container{
     /* max-height: 0px; */
@@ -62,11 +63,11 @@ header a{
 }
 
 .form-container input{
+    border: none;
     width: 400px;
     max-width: 100%; 
     height: 40px;
     padding-left: 10px;
-    margin-bottom: 5px;
 }
 
 /* Add/delete ingredient */
@@ -79,13 +80,13 @@ header a{
 }
 
 .ingredient-container{
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 40px;
     width: 400px;
     max-width: 100%;
-    border: 1px solid grey;
     margin-bottom: 5px;
 }
 
@@ -93,7 +94,6 @@ header a{
     background-color: green;
     height: 100%;
     width: 28px;
-    padding-left: 1px;
 }
 
 .controls.delete{
@@ -101,6 +101,7 @@ header a{
 }
 
 .ingredient{
+    background-color: white;
     border: none; 
     margin-bottom: 0px; 
     max-width: 100%;
@@ -159,7 +160,7 @@ header a{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
+    border: 2px solid #dd7230;
     transition: .5s ease-in-out;
     border-radius: 50%;
     cursor: pointer;
@@ -172,7 +173,7 @@ header a{
 
 .bar::before{
     content: '';
-    background-color: black;
+    background-color: #dd7230;
     display: block;
     height: 3px;
     width: 100%;
@@ -180,7 +181,7 @@ header a{
 }
 
 .bar{
-    background-color: black;
+    background-color: #dd7230;
     height: 3px;
     width: 18px;
 }
@@ -193,34 +194,41 @@ header a{
 }
 
 .post-wrapper{
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dd7230;
     position: relative;
     margin: auto;
     height: 400px;
-    width: 400px;
-    max-width: 100%;
-    background-color: blueviolet;
+    width: 100%;
     margin-bottom: 10px;
 }
 
+.post-wrapper:last-child{
+    border-bottom: none;
+}
+
 .post{
+    background-color: #e8e8e9;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
-    background-color: cadetblue;
 }
 
 .delete-btn{
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     right: 0;
 }
 
 /* Media queries */
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 1200px){
     #wrapper{
         padding: 0 3% 0 3%;
     }
 }
+
+
+

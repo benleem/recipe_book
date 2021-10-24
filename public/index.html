@@ -5,34 +5,40 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css">
-        <title>RecipeBook</title>
+        <link rel="icon" href="img/tab_logo.png">
+        <title>Recipe Hut</title>
     </head>
     <body>
         <header>
             <div class="navbar" id="wrapper">
-                <a href="index.html">Home</a>
+                <a href="index.html"><img src="img/logo.png" alt="" style="width: 75px;"></a>
                 <ul class="pages">
-                    <li style="padding-right: 10px;"><a href="index.html">Home</a></li>
-                    <li><a href="">Add/Delete Post</a></li>
+                    <li><a href="index.html" style="height: 100%;"><img src="img/home.png" alt="" style="width: 30px;"></a></li>
+                    <li style="padding: 0 20px;"><a href=""><img src="img/edit.png" alt="" style="width: 31px;"></a></li>
+                    <li><a href=""><img src="img/user.png" alt="" style="width: 30px;"></a></li>
                 </ul>
             </div>
         </header>
-        <form action="" class="form-container" id="wrapper">
-            <input type="text" placeholder="What's cookin?" id="input-title" style="margin-top: 20px;" required>
-            <div class="ingredient-wrapper">
-                <div class="ingredient-container">
-                    <input type="text" placeholder="Ingredients" id="input-ingredients" style="border: none; margin-bottom: 0px; width: 100%;height: 100%;">
-                    <div class="controls">
-                        <a class="add-ingredient">
-                            <span class="ingredient-bar"></span>
-                        </a>
+        <section class="form-wrapper">
+            <form action="" class="form-container" id="wrapper">
+                <div style="height: auto; width: 400px; max-width: 100%; border: 5px solid #f4c95d; border-bottom: none; margin-bottom: 20px; background-color: #f4c95d;">
+                    <input type="text" placeholder="What's cookin?" id="input-title" style="margin-bottom: 5px;" required>
+                    <div class="ingredient-wrapper">
+                        <div class="ingredient-container">
+                            <input type="text" placeholder="Ingredients" id="input-ingredients" style="border: none; margin-bottom: 0px; width: 100%;height: 100%;">
+                            <div class="controls">
+                                <a class="add-ingredient">
+                                    <span class="ingredient-bar"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="show-ingredients"></div>
                     </div>
+                    <input type="text" placeholder="Description/Instructions" id="input-description" style="margin-bottom: 0px;" required>
+                    <button type="submit" class="add-btn" style="height: 30px; background-color: #f4c95d; width: 398px; max-width: 100%; border: none; cursor: pointer;">Add post</button>
                 </div>
-                <div class="show-ingredients"></div>
-            </div>
-            <input type="text" placeholder="Description/Instructions" id="input-description" required>
-            <button type="submit" class="add-btn">Add post</button>
-        </form>
+            </form>
+        </section>
         <div class="show-form" id="wrapper">
             <a class="show-btn">
                 <span class="bar"></span>
