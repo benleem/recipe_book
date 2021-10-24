@@ -217,7 +217,13 @@ header a{
 }
 
 .delete-btn{
+    cursor: pointer;
     position: absolute;
+    background-color: red;
+    color: white;
+    border:none;
+    padding: 5px;
+    box-shadow: none;
     bottom: 10px;
     right: 0;
 }

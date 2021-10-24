@@ -27,7 +27,7 @@ const loader = async (postData) => {
                 <p>${post[i].data.postInfo.ingredients}</p>
                 <p>${post[i].data.postInfo.description}</p>
             </div>
-            <button class='delete-btn'>Delete This Post</button>
+            <button class='delete-btn'>Delete</button>
         </div>`);
     }
     document.querySelector('.post-container').innerHTML = posts.join('');
