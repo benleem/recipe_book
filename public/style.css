@@ -11,14 +11,181 @@
     margin: auto;
 }
 
-.form-container{
-    text-align: center;
+/* Header */
+
+header{
+    background-color: cadetblue;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header #wrapper{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+   
+}
+
+header a{
+    text-decoration: none;
+    color: black;
+}
+
+.navbar{
+    padding: 0 20px;
+}
+
+.pages li{
+    display: inline-block;
+}
+
+/* Post submit form */
+
+.form-container{
+    /* max-height: 0px; */
+    display: none;
+    text-align: center;
     flex-direction: column;
     text-align: center;        
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
 }
+
+.form-container.active{
+    /* max-height: 400px; */
+    display: flex;
+    transition: all .5s ease-in-out;
+}
+
+.form-container input{
+    width: 400px;
+    max-width: 100%; 
+    height: 40px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+
+/* Add/delete ingredient */
+
+.ingredient-wrapper{
+    width: 400px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ingredient-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    width: 400px;
+    max-width: 100%;
+    border: 1px solid grey;
+    margin-bottom: 5px;
+}
+
+.controls, .controls.delete{
+    background-color: green;
+    height: 100%;
+    width: 28px;
+    padding-left: 1px;
+}
+
+.controls.delete{
+    background-color: red;
+}
+
+.ingredient{
+    border: none; 
+    margin-bottom: 0px; 
+    max-width: 100%;
+    height: 100%;
+    background: none;
+}
+
+.add-ingredient, .delete-ingredient{
+    width: 28px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+.ingredient-bar::before{
+    content: '';
+    background-color: white;
+    display: block;
+    height: 2px;
+    width: 13px;
+    transform: rotate(90deg);
+}
+
+.ingredient-bar{
+    background-color: white;
+    height: 2px;
+    width: 13px;
+}
+
+.delete-ingredient{
+    background-color: red;
+}
+
+.delete-ingredient .ingredient-bar::before{
+    display: none;
+}
+
+/* Show form button */
+
+.show-form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.show-btn{
+    margin: 20px 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    transition: .5s ease-in-out;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.show-btn.active{
+    transform: rotate(45deg);
+
+}
+
+.bar::before{
+    content: '';
+    background-color: black;
+    display: block;
+    height: 3px;
+    width: 100%;
+    transform: rotate(90deg);
+}
+
+.bar{
+    background-color: black;
+    height: 3px;
+    width: 18px;
+}
+
+/* Posts */
 
 .post-container{
     display:flex;
@@ -26,12 +193,31 @@
 }
 
 .post-wrapper{
+    position: relative;
     margin: auto;
+    height: 400px;
     width: 400px;
     max-width: 100%;
     background-color: blueviolet;
     margin-bottom: 10px;
 }
+
+.post{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: cadetblue;
+}
+
+.delete-btn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* Media queries */
 
 @media screen and (max-width: 400px){
     #wrapper{

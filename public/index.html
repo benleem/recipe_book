@@ -8,11 +8,36 @@
         <title>RecipeBook</title>
     </head>
     <body>
+        <header>
+            <div class="navbar" id="wrapper">
+                <a href="index.html">Home</a>
+                <ul class="pages">
+                    <li style="padding-right: 10px;"><a href="index.html">Home</a></li>
+                    <li><a href="">Add/Delete Post</a></li>
+                </ul>
+            </div>
+        </header>
         <form action="" class="form-container" id="wrapper">
-            <input type="text" placeholder="Title" class="input-header" style="width: 400px; max-width: 100%; height: 40px; padding-left: 10px; margin-top: 20px;">
-            <input type="text" placeholder="What's cookin?" class="input-content" style="width: 400px; max-width: 100%; height: 40px; padding-left: 10px;">
-            <button type="submit" class="add-btn" style="margin-bottom: 20px;">Add post test</button>
+            <input type="text" placeholder="What's cookin?" id="input-title" style="margin-top: 20px;" required>
+            <div class="ingredient-wrapper">
+                <div class="ingredient-container">
+                    <input type="text" placeholder="Ingredients" id="input-ingredients" style="border: none; margin-bottom: 0px; width: 100%;height: 100%;">
+                    <div class="controls">
+                        <a class="add-ingredient">
+                            <span class="ingredient-bar"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="show-ingredients"></div>
+            </div>
+            <input type="text" placeholder="Description/Instructions" id="input-description" required>
+            <button type="submit" class="add-btn">Add post</button>
         </form>
+        <div class="show-form" id="wrapper">
+            <a class="show-btn">
+                <span class="bar"></span>
+            </a>
+        </div>
         <div class="post-container" id="wrapper"></div>
         <script src="main.js"></script>
     </body>

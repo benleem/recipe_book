@@ -23,20 +23,30 @@ const loader = async (postData) => {
         <div class='post-wrapper'>
             <div class='post' id = '${post[i].ref["@ref"].id}'>
                 <h2>${post[i].data.postInfo.title}</h2>
-                <p>${post[i].data.postInfo.content}</p>
+                <p>${post[i].data.postInfo.ingredients}</p>
+                <p>${post[i].data.postInfo.description}</p>
             </div>
             <button class='delete-btn'>Delete This Post</button>
         </div>`);
     }
     document.querySelector('.post-container').innerHTML = posts.join('');
+    console.log(post[0].data.postInfo.ingredients);
+    // for (let i = 0; i < array.length; i++) {
+        
+    // }
     deletePost();
 };
 
 const addPost= () => {
-    const addBtn = document.querySelector('.add-btn');
-    addBtn.addEventListener('click', async () =>{
-        var title = document.querySelector('.input-header').value;
-        var content = document.querySelector('.input-content').value;
+    const form = document.querySelector('.form-container');
+    form.addEventListener('submit', async () =>{
+        var title = document.querySelector('#input-title').value;
+        var description = document.querySelector('#input-description').value;
+        var nodeList = document.querySelectorAll('.ingredient');
+        var ingredientList = [];
+        for (let i = 0; i < nodeList.length; i++) {
+            ingredientList.push(nodeList[i].value);
+        }
         const response = await fetch('/.netlify/functions/addpost', {
             method:'POST',
             headers: {
@@ -45,7 +55,8 @@ const addPost= () => {
             body: JSON.stringify({
             username:'benleem',
             title: title,
-            content: content,
+            ingredients: ingredientList,
+            description: description,
             })
         });
     });
@@ -71,3 +82,56 @@ const deletePost = () =>{
 }
 
 addPost();
+
+const showForm = () =>{
+    const showBtn = document.querySelector('.show-btn');
+    const form = document.querySelector('.form-container');
+    showBtn.addEventListener('click', async () =>{
+        form.classList.toggle('active');
+        showBtn.classList.toggle('active');
+    });
+}
+
+showForm();
+
+const ingredients = () =>{
+    const container = document.querySelector('.show-ingredients')
+    const addBtn = document.querySelector('.add-ingredient');
+    const newIngredient = document.querySelector('#input-ingredients');
+    let ingredients = [];
+    newIngredient.required = true;
+    addBtn.addEventListener('click', async () =>{
+        newIngredient.required = false;
+        ingredients.push(`
+        <div class="ingredient-container">
+            <input class='ingredient' type="text" value='${newIngredient.value}' required >
+            <div class="controls delete">
+                <a class="delete-ingredient">
+                    <span class="ingredient-bar"></span>
+                </a>
+            </div>
+        </div>`);
+        container.innerHTML = ingredients.join('');
+        newIngredient.value = ''; 
+        deleteIngredient(ingredients, container);
+    });
+    if (ingredients.length == 0) {
+        newIngredient.required = true;
+    }
+}
+
+const deleteIngredient = (list, wrapper) =>{
+    let ingredients = list;
+    let container = wrapper;
+    var deleteBtn = document.querySelectorAll('.delete-ingredient');
+    for (let i = 0; i < ingredients.length; i++) {
+        deleteBtn[i].addEventListener('click', async () =>{
+            ingredients.splice(i, 1);
+            container.innerHTML = ingredients.join('');
+            deleteIngredient(ingredients, container);
+        });
+    }
+
+}
+
+ingredients();
