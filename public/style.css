@@ -48,6 +48,7 @@ header a{
 }
 
 .form-container{
+    font-family: 'Noto Sans Mono', monospace;
     /* max-height: 0px; */
     display: none;
     text-align: center;
@@ -57,6 +58,17 @@ header a{
     align-items: center;
     overflow: hidden;
     transition: all .5s ease-in-out;
+}
+
+.form-container input,.form-container textarea{
+    font-size: 14px;
+    font-family: 'Noto Sans Mono', monospace;
+}
+
+.form-container button{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .form-container.active{
@@ -248,6 +260,7 @@ header a{
 }
 
 .post img{
+    padding: 10px 0;
     width:250px; 
     max-width:100%;
 }
@@ -278,6 +291,7 @@ header a{
     .post img{
         width: 200px;
         max-width: 100%;
+        padding-bottom: 0;
     }
 }
 

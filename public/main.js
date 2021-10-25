@@ -24,7 +24,7 @@ const loader = async (postData) => {
         posts.push(`
         <div class='post-wrapper'>
             <div class='post' id = '${post[i].ref["@ref"].id}'>
-                <div style='text-align:center;padding:0px 10px;'><img src="img/logo.png" alt=""></div>
+                <div style='text-align:center;padding:0px 10px;'><img src="img/placeholder.jpg" alt=""></div>
                 <div style='padding:0 5px;display:flex; flex-direction:column;'>
                     <h2>${post[i].data.postInfo.title}</h2>
                     <h3>Ingredients:</h3>
