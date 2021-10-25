@@ -37,7 +37,8 @@ const loader = async (postData) => {
 
 const addPost= () => {
     const form = document.querySelector('.form-container');
-    form.addEventListener('submit', async () =>{
+    const addBtn = document.querySelector('.add-btn')
+    addBtn.addEventListener('click', async () =>{
         var title = document.querySelector('#input-title').value;
         var description = document.querySelector('#input-description').value;
         var nodeList = document.querySelectorAll('.ingredient');
