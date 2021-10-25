@@ -24,9 +24,14 @@ const loader = async (postData) => {
         posts.push(`
         <div class='post-wrapper'>
             <div class='post' id = '${post[i].ref["@ref"].id}'>
-                <h2>${post[i].data.postInfo.title}</h2>
-                <p>${post[i].data.postInfo.ingredients}</p>
-                <p style='white-space: pre-wrap;'>${post[i].data.postInfo.description}</p>
+                <div style='text-align:center;padding:0px 10px;'><img src="img/logo.png" alt=""></div>
+                <div style='padding:0 5px;display:flex; flex-direction:column;'>
+                    <h2>${post[i].data.postInfo.title}</h2>
+                    <h3>Ingredients:</h3>
+                    <p>${post[i].data.postInfo.ingredients}</p>
+                    <h3>Description/Instructions:</h3>
+                    <p style='white-space: pre-wrap; max-width:100%;'>${post[i].data.postInfo.description}</p>
+                </div>
             </div>
             <button class='delete-btn'>Delete</button>
         </div>`);
@@ -102,7 +107,7 @@ const ingredients = () =>{
         newIngredient.required = false;
         ingredients.push(`
         <div class="ingredient-container">
-            <input class='ingredient' type="text" value='${newIngredient.value}' required >
+            <input class='ingredient' type="text" value='${' ' + newIngredient.value}' required >
             <div class="controls delete">
                 <a class="delete-ingredient">
                     <span class="ingredient-bar"></span>

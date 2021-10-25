@@ -11,4 +11,3 @@ exports.handler = async (event, context) =>{
         return responseObj(500, error);
     }
 };
-

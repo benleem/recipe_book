@@ -1,4 +1,7 @@
 /* Hex Codes: #854d27, #dd7230, #f4c95d, #e7e393, #04030f */
+/* 
+font-family: 'Bebas Neue', cursive;
+font-family: 'Noto Sans Mono', monospace; */
 
 *{
     padding: 0;
@@ -198,7 +201,6 @@ header a{
     border-bottom: 2px solid #dd7230;
     position: relative;
     margin: auto;
-    height: 400px;
     width: 100%;
     margin-bottom: 10px;
 }
@@ -208,12 +210,46 @@ header a{
 }
 
 .post{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
     background-color: #e8e8e9;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
+    min-height: 300px;
+    width: 100%;
+}
+
+.post h2{
+    font-size: 20px;
+}
+
+.post h3{
+    font-size: 18px;
+}
+
+.post h2, .post h3{
+    padding-top: 10px;
+    font-weight: 600;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.post p{
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'Noto Sans Mono', monospace;
+}
+
+.post h2, .post p{
+    padding-bottom:10px;
+}
+
+.post img{
+    width:250px; 
+    max-width:100%;
 }
 
 .delete-btn{
@@ -230,11 +266,23 @@ header a{
 
 /* Media queries */
 
+@media screen and (max-width: 600px){
+    .post{
+        grid-template-columns: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+    .post p:last-child{
+        padding-bottom: 35px;
+    }
+    .post img{
+        width: 200px;
+        max-width: 100%;
+    }
+}
+
 @media screen and (max-width: 1200px){
     #wrapper{
         padding: 0 3% 0 3%;
     }
 }
-
-
-
