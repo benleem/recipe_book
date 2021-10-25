@@ -26,7 +26,7 @@ const loader = async (postData) => {
             <div class='post' id = '${post[i].ref["@ref"].id}'>
                 <h2>${post[i].data.postInfo.title}</h2>
                 <p>${post[i].data.postInfo.ingredients}</p>
-                <p>${post[i].data.postInfo.description}</p>
+                <p style='white-space: pre-wrap;'>${post[i].data.postInfo.description}</p>
             </div>
             <button class='delete-btn'>Delete</button>
         </div>`);
