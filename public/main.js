@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     fetchData();
     addPost();
+    fetchData();
 })
 
 const fetchData = async () => {
@@ -74,6 +75,7 @@ const deletePost = () =>{
                     id: postId
                 })
             });
+            fetchData();
         });
     }
 }
